@@ -1,0 +1,840 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maa RDD Aarogya Sadan</title>
+    <style>
+              * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+              }
+
+      ```
+          @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+          body {
+              font-family: 'Outfit', sans-serif;
+              background-color: #f8fafb;
+              color: #1a1a1a;
+              line-height: 1.6;
+          }
+
+          /* NAVIGATION */
+          nav {
+              background-color: white;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+              position: sticky;
+              top: 0;
+              z-index: 100;
+          }
+
+          .nav-container {
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 20px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              height: 70px;
+          }
+
+          .logo {
+              font-family: 'Lora', serif;
+              font-size: 1.8em;
+              font-weight: 700;
+              color: #1a4d7a;
+          }
+
+          .nav-links {
+              display: flex;
+              gap: 40px;
+              list-style: none;
+          }
+
+          .nav-links a {
+              text-decoration: none;
+              color: #1a1a1a;
+              font-weight: 500;
+              font-size: 0.95em;
+              transition: color 0.3s;
+          }
+
+          .nav-links a:hover {
+              color: #00a870;
+          }
+
+          .cta-button {
+              background-color: #2a7cb9;
+              color: white;
+              padding: 11px 28px;
+              border-radius: 6px;
+              font-weight: 600;
+              border: none;
+              cursor: pointer;
+              font-size: 0.95em;
+              transition: all 0.3s;
+          }
+
+          .cta-button:hover {
+              background-color: #1a4d7a;
+              transform: translateY(-2px);
+          }
+
+          /* HERO SECTION */
+          .hero {
+              background: linear-gradient(135deg, #1a4d7a 0%, #2a7cb9 100%);
+              color: white;
+              padding: 100px 20px;
+              text-align: center;
+          }
+
+          .hero-container {
+              max-width: 900px;
+              margin: 0 auto;
+          }
+
+          .hero h1 {
+              font-family: 'Lora', serif;
+              font-size: 3.5em;
+              margin-bottom: 20px;
+              font-weight: 700;
+          }
+
+          .hero p {
+              font-size: 1.3em;
+              margin-bottom: 40px;
+              opacity: 0.95;
+          }
+
+          .hero-buttons {
+              display: flex;
+              gap: 20px;
+              justify-content: center;
+              flex-wrap: wrap;
+          }
+
+          .btn-primary {
+              background-color: #00a870;
+              color: white;
+              padding: 14px 35px;
+              border-radius: 6px;
+              font-weight: 600;
+              border: none;
+              cursor: pointer;
+              font-size: 1em;
+              transition: all 0.3s;
+          }
+
+          .btn-primary:hover {
+              background-color: #008a5e;
+              transform: translateY(-3px);
+          }
+
+          .btn-secondary {
+              background-color: white;
+              color: #1a4d7a;
+              padding: 14px 35px;
+              border-radius: 6px;
+              font-weight: 600;
+              border: none;
+              cursor: pointer;
+              font-size: 1em;
+              transition: all 0.3s;
+          }
+
+          .btn-secondary:hover {
+              background-color: #f8fafb;
+              transform: translateY(-3px);
+          }
+
+          /* CONTAINER */
+          .container {
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 80px 20px;
+          }
+
+          .section-title {
+              font-family: 'Lora', serif;
+              font-size: 2.8em;
+              margin-bottom: 15px;
+              color: #1a4d7a;
+              text-align: center;
+              font-weight: 700;
+          }
+
+          .section-subtitle {
+              text-align: center;
+              color: #666;
+              margin-bottom: 60px;
+              font-size: 1.1em;
+          }
+
+          /* DOCTORS GRID */
+          .doctors-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 40px;
+          }
+
+          .doctor-card {
+              background-color: white;
+              border-radius: 10px;
+              overflow: hidden;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+              transition: all 0.4s;
+          }
+
+          .doctor-card:hover {
+              transform: translateY(-8px);
+              box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+          }
+
+          .doctor-image {
+              width: 100%;
+              height: 280px;
+              background: linear-gradient(135deg, #e0e7ff 0%, #f0e7ff 100%);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 6em;
+              transition: all 0.4s;
+          }
+
+          .doctor-card:hover .doctor-image {
+              background: linear-gradient(135deg, #2a7cb9 0%, #1a4d7a 100%);
+              color: white;
+          }
+
+          .doctor-info {
+              padding: 30px;
+          }
+
+          .doctor-name {
+              font-family: 'Lora', serif;
+              font-size: 1.4em;
+              margin-bottom: 5px;
+              color: #1a4d7a;
+              font-weight: 700;
+          }
+
+          .doctor-specialty {
+              color: #00a870;
+              font-weight: 600;
+              margin-bottom: 15px;
+              font-size: 0.9em;
+              text-transform: uppercase;
+          }
+
+          .doctor-experience {
+              color: #666;
+              font-size: 0.9em;
+              margin-bottom: 20px;
+          }
+
+          .doctor-bio {
+              color: #888;
+              font-size: 0.95em;
+              margin-bottom: 20px;
+          }
+
+          .doctor-rating {
+              color: #ffc107;
+              font-size: 1.1em;
+          }
+
+          /* SERVICES GRID */
+          .services-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 30px;
+          }
+
+          .service-card {
+              background-color: white;
+              padding: 35px;
+              border-radius: 10px;
+              text-align: center;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+              transition: all 0.3s;
+              border-top: 4px solid #2a7cb9;
+          }
+
+          .service-card:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+              border-top-color: #00a870;
+          }
+
+          .service-icon {
+              font-size: 3em;
+              margin-bottom: 20px;
+          }
+
+          .service-card h3 {
+              font-family: 'Lora', serif;
+              color: #1a4d7a;
+              margin-bottom: 15px;
+              font-size: 1.3em;
+          }
+
+          .service-card p {
+              color: #666;
+          }
+          /* Ensure the footer with id="contact" stays at the end of the page */
+          html, body {
+            height: 100%;
+          }
+          body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+          }
+          /* Let content flow naturally; footer will be pushed to the bottom */
+          footer#contact {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* center footer content horizontally */
+            padding: 40px 20px;
+          }
+
+          /* center and adjust column ratio inside the footer */
+          footer#contact .footer-content {
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* adjust ratio via min width */
+            gap: 30px;
+            justify-items: center; /* center each column's content */
+          }
+
+          /* ensure columns' text is centered and sized consistently */
+          footer#contact .footer-column,
+          footer#contact .footer-row {
+            text-align: center;
+            width: 100%;
+            max-width: 320px;
+          }
+          /* BOOKING SECTION */
+          .booking-section {
+              background-color: white;
+              padding: 50px;
+              border-radius: 10px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+              max-width: 600px;
+              margin: 0 auto;
+          }
+
+          .booking-section h2 {
+              font-family: 'Lora', serif;
+              color: #1a4d7a;
+              margin-bottom: 30px;
+              font-size: 2em;
+          }
+
+          .form-group {
+              margin-bottom: 25px;
+          }
+
+          .form-group label {
+              display: block;
+              margin-bottom: 8px;
+              color: #1a4d7a;
+              font-weight: 600;
+          }
+
+          .form-group input,
+          .form-group select,
+          .form-group textarea {
+              width: 100%;
+              padding: 12px 15px;
+              border: 1.5px solid #e0e0e0;
+              border-radius: 6px;
+              font-size: 1em;
+              transition: all 0.3s;
+              color: #1a1a1a;
+          }
+
+          .form-group input:focus,
+          .form-group select:focus,
+          .form-group textarea:focus {
+              outline: none;
+              border-color: #2a7cb9;
+              box-shadow: 0 0 0 3px rgba(42, 124, 185, 0.1);
+          }
+
+          .form-row {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 20px;
+          }
+
+          .form-group textarea {
+              min-height: 120px;
+              resize: vertical;
+          }
+
+          .booking-submit {
+              width: 100%;
+              background-color: #2a7cb9;
+              color: white;
+              padding: 14px;
+              border: none;
+              border-radius: 6px;
+              font-weight: 600;
+              font-size: 1em;
+              cursor: pointer;
+              transition: all 0.3s;
+          }
+
+          .booking-submit:hover {
+              background-color: #1a4d7a;
+              transform: translateY(-2px);
+          }
+
+          .success-message {
+              display: none;
+              background-color: #d4edda;
+              color: #155724;
+              padding: 15px;
+              border-radius: 6px;
+              margin-bottom: 20px;
+              border: 1px solid #c3e6cb;
+          }
+
+          .success-message.show {
+              display: block;
+          }
+
+          /* FOOTER */
+          footer {
+              background-color: #1a4d7a;
+              color: white;
+              padding: 50px 20px;
+              margin-top: 80px;
+          }
+
+          .footer-content {
+              max-width: 1200px;
+              margin: 0 auto;
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 40px;
+              margin-bottom: 40px;
+          }
+
+          .footer-column h4 {
+              margin-bottom: 20px;
+              font-size: 1.1em;
+              font-weight: 600;
+          }
+
+          .footer-column p,
+          .footer-column a {
+              color: rgba(255, 255, 255, 0.85);
+              text-decoration: none;
+              margin-bottom: 10px;
+              transition: color 0.3s;
+          }
+
+          .footer-column a:hover {
+              color: #00a870;
+          }
+
+          .footer-divider {
+              border-top: 1px solid rgba(255, 255, 255, 0.2);
+              padding-top: 30px;
+              text-align: center;
+              color: rgba(255, 255, 255, 0.7);
+          }
+
+          @media (max-width: 768px) {
+              .nav-links {
+                  display: none;
+              }
+
+              .hero h1 {
+                  font-size: 2.2em;
+              }
+
+              .section-title {
+                  font-size: 2em;
+              }
+
+              .form-row {
+                  grid-template-columns: 1fr;
+              }
+
+              .booking-section {
+                  padding: 30px;
+              }
+
+              .doctors-grid {
+                  grid-template-columns: 1fr;
+              }
+          }
+    </style>
+    ```
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">Maa RDD Aarogya Sadan</div>
+        <ul class="nav-links">
+          <li><a href="#doctors">Our Doctors</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#booking">Book Appointment</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button
+          class="cta-button"
+          onclick="document.getElementById('booking').scrollIntoView()"
+        >
+          Book Now
+        </button>
+      </div>
+    </nav>
+
+    ```
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-container">
+        <h1>Your Health, Our Priority</h1>
+        <p>Premier healthcare delivered with compassion and expertise</p>
+        <div class="hero-buttons">
+          <button
+            class="btn-primary"
+            onclick="document.getElementById('booking').scrollIntoView()"
+          >
+            Book Appointment
+          </button>
+          <button
+            class="btn-secondary"
+            onclick="document.getElementById('doctors').scrollIntoView()"
+          >
+            Meet Our Doctors
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCTORS SECTION -->
+    <div class="container" id="doctors">
+      <h2 class="section-title">Our Medical Team</h2>
+      <p class="section-subtitle">
+        Experienced healthcare professionals dedicated to your wellbeing
+      </p>
+
+      <div class="doctors-grid">
+        <div class="doctor-card">
+          <div class="doctor-image">👨‍⚕️</div>
+          <div class="doctor-info">
+            <div class="doctor-name">Dr. Rakesh Gupta</div>
+            <div class="doctor-specialty">General Medicine</div>
+            <div class="doctor-experience">40+ years experience</div>
+            <div class="doctor-bio">
+              Specializing in comprehensive healthcare and patient wellness with
+              a dedicated approach.
+            </div>
+            <div class="doctor-rating">★★★★★ (4.9/5)</div>
+          </div>
+        </div>
+
+        <div class="doctor-card">
+          <div class="doctor-image">👨‍⚕️</div>
+          <div class="doctor-info">
+            <div class="doctor-name">Dr. Ashish Ranjan</div>
+            <div class="doctor-specialty">Pediatrics</div>
+            <div class="doctor-experience">8+ years experience</div>
+            <div class="doctor-bio">
+              Expert in child healthcare and pediatric care with specialized
+              treatment for infants and children.
+            </div>
+            <div class="doctor-rating">★★★★★ (4.92/5)</div>
+          </div>
+        </div>
+
+        <div class="doctor-card">
+          <div class="doctor-image">👩‍⚕️</div>
+          <div class="doctor-info">
+            <div class="doctor-name">Dr. Shalini Krishna</div>
+            <div class="doctor-specialty">Ophthalmology</div>
+            <div class="doctor-experience">3+ years experience</div>
+            <div class="doctor-bio">
+              Specialized eye care with expertise in vision correction, eye
+              diseases, and advanced eye surgery.
+            </div>
+            <div class="doctor-rating">★★★★★ (4.93/5)</div>
+          </div>
+        </div>
+
+        <!--<div class="doctor-card">
+          <div class="doctor-image">👩‍⚕️</div>
+          <div class="doctor-info">
+            <div class="doctor-name">Dr. Emily Watson</div>
+            <div class="doctor-specialty">Dermatology</div>
+            <div class="doctor-experience">10+ years experience</div>
+            <div class="doctor-bio">
+              Specialized in skin health, cosmetic procedures, and
+              dermatological treatments.
+            </div>
+            <div class="doctor-rating">★★★★★ (4.92/5)</div>
+          </div>
+        </div>
+
+        <div class="doctor-card">
+          <div class="doctor-image">👨‍⚕️</div>
+          <div class="doctor-info">
+            <div class="doctor-name">Dr. David Kumar</div>
+            <div class="doctor-specialty">Neurology</div>
+            <div class="doctor-experience">14+ years experience</div>
+            <div class="doctor-bio">
+              Treating neurological disorders with innovative approaches and
+              cutting-edge technology.
+            </div>
+            <div class="doctor-rating">★★★★★ (4.88/5)</div>
+          </div>
+        </div> -->
+
+        
+
+    <!-- SERVICES SECTION -->
+    <div class="container" id="services">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">
+        Comprehensive healthcare solutions tailored to your needs
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🏥</div>
+          <h3>General Consultation</h3>
+          <p>
+            Professional medical consultations for diagnosis and treatment
+            planning with experienced physicians.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔬</div>
+          <h3>Laboratory Tests</h3>
+          <p>
+            Advanced diagnostic testing with quick turnaround times and accurate
+            results for preventive care.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>Health Check-ups</h3>
+          <p>
+            Comprehensive wellness programs designed to monitor and maintain
+            optimal health conditions.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💉</div>
+          <h3>Vaccinations</h3>
+          <p>
+            Complete immunization services including routine and travel vaccines
+            for all age groups.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📺</div>
+          <h3>Telemedicine</h3>
+          <p>
+            Remote consultations available for your convenience, connecting with
+            doctors from home.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🩺</div>
+          <h3>Specialist Care</h3>
+          <p>
+            Access to specialized medical professionals for complex health
+            conditions and treatments.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- APPOINTMENT BOOKING -->
+    <div class="container" id="booking">
+      <h2 class="section-title">Book Your Appointment</h2>
+      <p class="section-subtitle">
+        Schedule a consultation with our experienced healthcare professionals
+      </p>
+
+      <div class="booking-section">
+        <div class="success-message" id="successMessage">
+          ✓ Appointment booked successfully! We'll contact you shortly to
+          confirm.
+        </div>
+
+        <form id="bookingForm" onsubmit="handleBooking(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="your@email.com"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                placeholder="+91 9835067876"
+              />
+            </div>
+            <div class="form-group">
+              <label for="doctor">Select Doctor</label>
+              <select id="doctor" name="doctor" required>
+                <option value="">-- Choose a doctor --</option>
+                <option value="rakesh-gupta">
+                  Dr. Rakesh Gupta (General Medicine)
+                </option>
+                <option value="ashish-ranjan">
+                  Dr. Ashish Ranjan (Pediatrics)
+                </option>
+                <option value="shalini-krishna">
+                  Dr. Shalini Krishna (Ophthalmology)
+                </option>
+                <option value="emily-watson">
+                  Dr. Emily Watson (Dermatology)
+                </option>
+                <option value="david-kumar">Dr. David Kumar (Neurology)</option>
+                <option value="lisa-anderson">
+                  Dr. Lisa Anderson (General Medicine)
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="form-group">
+              <label for="time">Preferred Time</label>
+              <select id="time" name="time" required>
+                <option value="">-- Select time --</option>
+                <option value="09:00">9:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="02:00">2:00 PM</option>
+                <option value="03:00">3:00 PM</option>
+                <option value="04:00">4:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="reason">Reason for Visit</label>
+            <textarea
+              id="reason"
+              name="reason"
+              placeholder="Describe your symptoms or reason for visit..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="booking-submit">Book Appointment</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>Maa RDD Aarogya Sadan</h4>
+          <p>Providing exceptional healthcare with compassion and expertise.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <a href="#doctors">Our Doctors</a>
+          <a href="#services">Services</a>
+          <a href="#booking">Book Appointment</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Info</h4>
+          <p>📞 +91 98350 67876</p>
+          <p>📧 info@aarogyasadan.com</p>
+          <p>📍 Basudeopur Chaputa, Hajipur, Vaishali, Bihar</p>
+        </div>
+        <div class="footer-row ">
+          <h4>Hours</h4>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+
+      </div>
+      <div class="footer-divider">
+        <p>&copy; 2024 Maa RDD Aarogya Sadan. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      function handleBooking(event) {
+        event.preventDefault();
+        const form = document.getElementById("bookingForm");
+        const successMessage = document.getElementById("successMessage");
+
+        const formData = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phone").value,
+          doctor: document.getElementById("doctor").value,
+          date: document.getElementById("date").value,
+          time: document.getElementById("time").value,
+          reason: document.getElementById("reason").value,
+        };
+
+        console.log("Appointment booked:", formData);
+        successMessage.classList.add("show");
+        form.reset();
+
+        setTimeout(() => {
+          successMessage.classList.remove("show");
+        }, 5000);
+      }
+
+      document.getElementById("date").min = new Date()
+        .toISOString()
+        .split("T")[0];
+    </script>
+    ```
+  </body>
+</html>
